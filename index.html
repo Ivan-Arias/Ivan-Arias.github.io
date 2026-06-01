@@ -26,7 +26,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Henrry I. Arias M.",
-    "alternateName": "Ivan Arias",
+    "alternateName": "Henrry Arias",
     "jobTitle": "Software Engineer",
     "url": "https://ivan-arias.github.io/",
     "email": "mailto:ivan.hariasaqp@gmail.com",
@@ -48,10 +48,13 @@
       "https://www.linkedin.com/in/henrry-arias/"
     ]
   }
+  
+  
+  
   </script>
 
   <style>
-    :root {
+:root {
       --bg: #020617;
       --card: rgba(15, 23, 42, 0.86);
       --text: #f8fafc;
@@ -593,6 +596,124 @@
         flex-direction: column;
       }
     }
+  
+    .skill-web-window {
+      width: 100%;
+      height: 100%;
+      padding: 18px;
+      background:
+        radial-gradient(circle at center, rgba(56, 189, 248, 0.12), transparent 34%),
+        rgba(2, 6, 23, 0.78);
+      border-radius: 32px;
+    }
+
+    #skillGalaxy {
+      width: 100%;
+      min-height: 430px;
+      margin-top: 0;
+    }
+
+    .galaxy-node {
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .galaxy-icon {
+      fill: white;
+      font-size: 20px;
+      font-weight: 950;
+      text-anchor: middle;
+      pointer-events: none;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    .galaxy-child-icon {
+      fill: white;
+      font-size: 13px;
+      font-weight: 950;
+      text-anchor: middle;
+      pointer-events: none;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    .galaxy-child-label {
+      fill: #e2e8f0;
+      font-size: 10px;
+      font-weight: 850;
+      text-anchor: middle;
+      pointer-events: none;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    .galaxy-link {
+      stroke: rgba(148, 163, 184, 0.32);
+      stroke-width: 1.4;
+    }
+
+    .galaxy-link-strong {
+      stroke: rgba(56, 189, 248, 0.48);
+      stroke-width: 1.8;
+    }
+
+  
+    .tech-window {
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(2, 6, 23, 0.86);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+
+    .tech-window-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 23, 42, 0.92);
+    }
+
+    .tech-window-bar span {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: #fb7185;
+    }
+
+    .tech-window-bar span:nth-child(2) {
+      background: #facc15;
+    }
+
+    .tech-window-bar span:nth-child(3) {
+      background: #22c55e;
+    }
+
+    .tech-window-bar strong {
+      margin-left: 8px;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+    }
+
+    .tech-window-body {
+      padding: 18px 20px 20px;
+    }
+
+    .terminal-line {
+      margin: 0 0 10px;
+      color: #86efac !important;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.88rem;
+    }
+
+    .skill-web-window {
+      background:
+        radial-gradient(circle at center, rgba(56, 189, 248, 0.12), transparent 34%),
+        rgba(2, 6, 23, 0.86);
+    }
+
   </style>
 </head>
 
@@ -622,7 +743,7 @@
           <span class="eyebrow">Software Engineer · Backend · Banca · Arquitectura</span>
 
           <h1>
-            Desarrollo soluciones <span>empresariales</span> con enfoque técnico y escalable.
+            Desarrollo soluciones <span>empresariales</span> robustas y sostenibles.
           </h1>
 
           <p class="hero-subtitle">
@@ -632,12 +753,19 @@
 
         </div>
 
-        <aside class="hero-card" aria-label="Mapa visual interactivo">
-          <svg id="heroNetwork"></svg>
+		<aside class="hero-card tech-card" aria-label="Mapa interactivo de habilidades">
+          <div class="tech-window skill-web-window">
+            <div class="tech-window-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>~/henrry/skill-galaxy</strong>
+            </div>
 
-          <div class="hero-card-content">
-            <h2>Henrry I. Arias M.</h2>
-            <p>Software Engineer</p>
+            <div class="tech-window-body">
+              <p class="terminal-line">$ hover --explode skill_nodes</p>
+              <div id="skillGalaxy"></div>
+            </div>
           </div>
         </aside>
       </div>
@@ -881,29 +1009,61 @@
   </footer>
 
   <script>
-    const networkNodes = [
-      { id: "Henrry", group: "core" },
-      { id: "Backend", group: "backend" },
-      { id: "Arquitectura", group: "architecture" },
-      { id: "Banca", group: "domain" },
-      { id: "Cloud", group: "cloud" },
-      { id: "Calidad", group: "quality" },
-      { id: "APIs", group: "api" },
-      { id: "Datos", group: "data" }
-    ];
+const networkNodes = [
+  { id: "Henrry", group: "core" },
 
-    const networkLinks = [
-      { source: "Henrry", target: "Backend" },
-      { source: "Henrry", target: "Arquitectura" },
-      { source: "Henrry", target: "Banca" },
-      { source: "Henrry", target: "Cloud" },
-      { source: "Henrry", target: "Calidad" },
-      { source: "Backend", target: "APIs" },
-      { source: "Backend", target: "Datos" },
-      { source: "Arquitectura", target: "APIs" },
-      { source: "Banca", target: "Datos" },
-      { source: "Cloud", target: "Calidad" }
-    ];
+  { id: "Java", group: "backend" },
+  { id: "Spring", group: "backend" },
+  { id: "Python", group: "backend" },
+  { id: "REST APIs", group: "api" },
+  { id: "Batch Jobs", group: "batch" },
+
+  { id: "Oracle", group: "data" },
+  { id: "MongoDB", group: "data" },
+  { id: "Elastic", group: "data" },
+
+  { id: "Cloud", group: "cloud" },
+  { id: "GitHub", group: "devops" },
+  { id: "CI/CD", group: "devops" },
+  { id: "Quality", group: "quality" },
+
+  { id: "SCRUM", group: "agile" },
+  { id: "Agile", group: "agile" },
+
+  { id: "GenAI", group: "ai" },
+  { id: "Machine Learning", group: "ai" },
+  { id: "Neural Networks", group: "ai" }
+];
+
+const networkLinks = [
+  { source: "Henrry", target: "Java" },
+  { source: "Henrry", target: "Python" },
+  { source: "Henrry", target: "Spring" },
+  { source: "Henrry", target: "SCRUM" },
+  { source: "Henrry", target: "GenAI" },
+
+  { source: "Java", target: "Spring" },
+  { source: "Java", target: "REST APIs" },
+  { source: "Java", target: "Batch Jobs" },
+
+  { source: "Python", target: "Machine Learning" },
+  { source: "Machine Learning", target: "Neural Networks" },
+  { source: "GenAI", target: "Machine Learning" },
+
+  { source: "Spring", target: "Oracle" },
+  { source: "Spring", target: "MongoDB" },
+  { source: "REST APIs", target: "Elastic" },
+
+  { source: "REST APIs", target: "Cloud" },
+  { source: "Batch Jobs", target: "CI/CD" },
+
+  { source: "GitHub", target: "CI/CD" },
+  { source: "CI/CD", target: "Quality" },
+  { source: "Quality", target: "Henrry" },
+
+  { source: "SCRUM", target: "Agile" },
+  { source: "Agile", target: "Quality" }
+];
 
     const workItems = [
       {
@@ -1085,7 +1245,31 @@
       const height = 420;
       d3.select("#heroNetwork").selectAll("*").remove();
       const svg = d3.select("#heroNetwork").attr("viewBox", "0 0 " + width + " " + height).attr("preserveAspectRatio", "xMidYMid meet");
-      const color = d3.scaleOrdinal().domain(["core", "backend", "architecture", "domain", "cloud", "quality", "api", "data"]).range(["#38bdf8", "#6366f1", "#14b8a6", "#facc15", "#a855f7", "#fb7185", "#22c55e", "#0ea5e9"]);
+		const color = d3.scaleOrdinal()
+		  .domain([
+			"core",
+			"backend",
+			"api",
+			"batch",
+			"data",
+			"cloud",
+			"devops",
+			"quality",
+			"agile",
+			"ai"
+		  ])
+		  .range([
+			"#38bdf8",
+			"#6366f1",
+			"#14b8a6",
+			"#a855f7",
+			"#f59e0b",
+			"#0ea5e9",
+			"#fb7185",
+			"#eab308",
+			"#22c55e",
+			"#c084fc"
+		  ]);
       const simulation = d3.forceSimulation(networkNodes).force("link", d3.forceLink(networkLinks).id(function (d) { return d.id; }).distance(92)).force("charge", d3.forceManyBody().strength(-320)).force("center", d3.forceCenter(width / 2, height / 2 - 16)).force("collision", d3.forceCollide().radius(44));
       const link = svg.append("g").selectAll("line").data(networkLinks).join("line").attr("stroke", "rgba(148, 163, 184, 0.34)").attr("stroke-width", 1.5);
       const node = svg.append("g").selectAll("g").data(networkNodes).join("g");
@@ -1098,13 +1282,289 @@
     }
 
     function renderAll() {
-      renderHeroNetwork();
-      buildApiList(workItems, "#workList", "#workTitle", "#workResponse");
-      buildApiList(educationItems, "#educationList", "#educationTitle", "#educationResponse");
+        renderSkillGalaxy();
+		buildApiList(workItems, "#workList", "#workTitle", "#workResponse");
+		buildApiList(educationItems, "#educationList", "#educationTitle", "#educationResponse");
     }
 
     renderAll();
-    window.addEventListener("resize", renderHeroNetwork);
+	window.addEventListener("resize", renderSkillGalaxy);
+	
+	
+	function renderSkillGalaxy() {
+  const groups = [
+    {
+      id: "BD",
+      label: "Base de datos",
+      icon: "▣",
+      color: "#f59e0b",
+      x: 0.18,
+      y: 0.34,
+      children: [
+        { id: "Oracle", icon: "OR" },
+        { id: "MongoDB", icon: "M" },
+        { id: "Elastic", icon: "E" },
+        { id: "SQL Server", icon: "SQL" }
+      ]
+    },
+    {
+      id: "LPs",
+      label: "Lenguajes",
+      icon: "{ }",
+      color: "#38bdf8",
+      x: 0.34,
+      y: 0.18,
+      children: [
+        { id: "Java", icon: "J" },
+        { id: "Python", icon: "Py" },
+        { id: "C#", icon: "C#" },
+        { id: "C++", icon: "C++" }
+      ]
+    },
+    {
+      id: "APIs",
+      label: "Servicios",
+      icon: "↔",
+      color: "#14b8a6",
+      x: 0.64,
+      y: 0.20,
+      children: [
+        { id: "REST", icon: "GET" },
+        { id: "JSON", icon: "{}" },
+        { id: "Swagger", icon: "SW" },
+        { id: "WebFlux", icon: "WF" }
+      ]
+    },
+    {
+      id: "BE",
+      label: "Backend",
+      icon: "⚙",
+      color: "#6366f1",
+      x: 0.82,
+      y: 0.38,
+      children: [
+        { id: "Spring", icon: "SP" },
+        { id: "Batch", icon: "BT" },
+        { id: "Maven", icon: "MV" },
+        { id: "JUnit", icon: "T" }
+      ]
+    },
+    {
+      id: "DEV",
+      label: "DevOps",
+      icon: "⌘",
+      color: "#fb7185",
+      x: 0.70,
+      y: 0.72,
+      children: [
+        { id: "GitHub", icon: "GH" },
+        { id: "Git-flow", icon: "GF" },
+        { id: "CI/CD", icon: "CI" },
+        { id: "SonarQube", icon: "SQ" }
+      ]
+    },
+    {
+      id: "AI",
+      label: "IA",
+      icon: "✦",
+      color: "#c084fc",
+      x: 0.42,
+      y: 0.82,
+      children: [
+        { id: "GenAI", icon: "AI" },
+        { id: "ML", icon: "ML" },
+        { id: "Redes N.", icon: "RN" },
+        { id: "NLP", icon: "NLP" }
+      ]
+    },
+    {
+      id: "AG",
+      label: "Agile",
+      icon: "↻",
+      color: "#22c55e",
+      x: 0.18,
+      y: 0.68,
+      children: [
+        { id: "SCRUM", icon: "SC" },
+        { id: "Sprints", icon: "SP" },
+        { id: "Daily", icon: "D" },
+        { id: "Mejora", icon: "+" }
+      ]
+    },
+    {
+      id: "CLD",
+      label: "Cloud",
+      icon: "☁",
+      color: "#0ea5e9",
+      x: 0.50,
+      y: 0.50,
+      children: [
+        { id: "AWS", icon: "AWS" },
+        { id: "Azure", icon: "AZ" },
+        { id: "Apps", icon: "APP" },
+        { id: "Arquitectura", icon: "ARQ" }
+      ]
+    }
+  ];
+
+  const webLinks = [
+    ["LPs", "BE"],
+    ["BE", "APIs"],
+    ["APIs", "BD"],
+    ["BE", "BD"],
+    ["BE", "DEV"],
+    ["DEV", "CLD"],
+    ["CLD", "APIs"],
+    ["AG", "DEV"],
+    ["AG", "BE"],
+    ["AI", "BD"],
+    ["AI", "CLD"],
+    ["LPs", "AI"],
+    ["BD", "AG"],
+    ["CLD", "BD"]
+  ];
+
+  const container = document.querySelector("#skillGalaxy");
+  const width = container.clientWidth || 520;
+  const height = 430;
+
+  container.innerHTML = "";
+
+  const svg = d3
+    .select("#skillGalaxy")
+    .append("svg")
+    .attr("viewBox", "0 0 " + width + " " + height)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const byId = new Map();
+
+  groups.forEach(group => {
+    group.px = group.x * width;
+    group.py = group.y * height;
+    byId.set(group.id, group);
+  });
+
+  const linkLayer = svg.append("g");
+  const childLayer = svg.append("g");
+  const nodeLayer = svg.append("g");
+
+  linkLayer
+    .selectAll("line")
+    .data(webLinks.filter(link => byId.has(link[0]) && byId.has(link[1])))
+    .join("line")
+    .attr("class", "galaxy-link")
+    .attr("x1", d => byId.get(d[0]).px)
+    .attr("y1", d => byId.get(d[0]).py)
+    .attr("x2", d => byId.get(d[1]).px)
+    .attr("y2", d => byId.get(d[1]).py);
+
+  const groupNode = nodeLayer
+    .selectAll("g")
+    .data(groups)
+    .join("g")
+    .attr("class", "galaxy-node")
+    .attr("transform", d => "translate(" + d.px + "," + d.py + ")")
+    .on("click", function (event, d) {
+      nodeLayer
+        .selectAll("circle")
+        .attr("stroke", "rgba(255,255,255,0.68)")
+        .attr("stroke-width", 1.3);
+
+      d3.select(this)
+        .select("circle")
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 2.8);
+
+      explode(d);
+    });
+
+  groupNode
+    .append("circle")
+    .attr("r", 38)
+    .attr("fill", d => d.color)
+    .attr("opacity", 0.94)
+    .attr("stroke", "rgba(255,255,255,0.68)")
+    .attr("stroke-width", 1.3);
+
+  groupNode
+    .append("text")
+    .attr("class", "galaxy-icon")
+    .attr("dy", -4)
+    .text(d => d.icon);
+
+  groupNode
+    .append("text")
+    .attr("class", "galaxy-child-label")
+    .attr("dy", 23)
+    .text(d => d.label);
+
+  function explode(group) {
+    childLayer.selectAll("*").remove();
+
+    const childRadius = 92;
+    const angleOffset = Math.atan2(group.py - height / 2, group.px - width / 2);
+    const spread = Math.PI * 0.85;
+    const start = angleOffset - spread / 2;
+
+    const children = group.children.map((child, index) => {
+      const angle = start + (index / Math.max(group.children.length - 1, 1)) * spread;
+      return {
+        ...child,
+        x: group.px + Math.cos(angle) * childRadius,
+        y: group.py + Math.sin(angle) * childRadius,
+        color: group.color
+      };
+    });
+
+    childLayer
+      .selectAll("line")
+      .data(children)
+      .join("line")
+      .attr("class", "galaxy-link-strong")
+      .attr("x1", group.px)
+      .attr("y1", group.py)
+      .attr("x2", group.px)
+      .attr("y2", group.py)
+      .transition()
+      .duration(260)
+      .attr("x2", d => d.x)
+      .attr("y2", d => d.y);
+
+    const nodes = childLayer
+      .selectAll("g")
+      .data(children)
+      .join("g")
+      .attr("transform", "translate(" + group.px + "," + group.py + ")")
+      .style("opacity", 0);
+
+    nodes
+      .append("circle")
+      .attr("r", 27)
+      .attr("fill", d => d.color)
+      .attr("opacity", 0.80)
+      .attr("stroke", "rgba(255,255,255,0.52)")
+      .attr("stroke-width", 1.1);
+
+    nodes
+      .append("text")
+      .attr("class", "galaxy-child-icon")
+      .attr("dy", -2)
+      .text(d => d.icon);
+
+    nodes
+      .append("text")
+      .attr("class", "galaxy-child-label")
+      .attr("dy", 18)
+      .text(d => d.id);
+
+    nodes
+      .transition()
+      .duration(260)
+      .style("opacity", 1)
+      .attr("transform", d => "translate(" + d.x + "," + d.y + ")");
+  }
+}
+
   </script>
 
 </body>
