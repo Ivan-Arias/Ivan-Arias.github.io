@@ -214,9 +214,7 @@
       border-radius: 32px;
       border: 1px solid var(--line);
       overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.26), transparent 42%),
-        rgba(15, 23, 42, 0.86);
+      background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.26), transparent 42%), rgba(15, 23, 42, 0.86);
       box-shadow: 0 24px 90px rgba(0, 0, 0, 0.3);
     }
 
@@ -390,74 +388,119 @@
       font-size: 0.94rem;
     }
 
-    .timeline {
+    .api-grid {
       display: grid;
-      gap: 16px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: start;
     }
 
-    details.exp {
+    .api-panel,
+    .swagger-response {
       border: 1px solid var(--line);
-      border-radius: 26px;
+      border-radius: 28px;
       overflow: hidden;
-      background: rgba(15, 23, 42, 0.72);
+      background: rgba(15, 23, 42, 0.86);
+      box-shadow: 0 18px 70px rgba(0, 0, 0, 0.2);
     }
 
-    details.exp summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 22px 24px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
+    .api-panel-head,
+    .response-toolbar {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.54);
     }
 
-    details.exp summary::-webkit-details-marker {
-      display: none;
+    .api-panel-head h3 {
+      margin: 0;
+      font-size: 1.1rem;
     }
 
-    .company {
-      color: var(--accent);
+    .api-list {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .endpoint {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 18px;
+      background: rgba(2, 6, 23, 0.42);
+      color: var(--text);
+      padding: 14px;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .endpoint:hover,
+    .endpoint.active {
+      border-color: rgba(56, 189, 248, 0.6);
+      background: rgba(56, 189, 248, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .endpoint-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .method {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      color: #052e16;
+      background: #22c55e;
       font-weight: 950;
+      font-size: 0.78rem;
     }
 
-    .role {
-      font-size: 1.22rem;
-      font-weight: 950;
-      letter-spacing: -0.02em;
+    .path {
+      color: #bae6fd;
+      font-weight: 850;
+      overflow-wrap: anywhere;
     }
 
-    .period {
+    .endpoint small {
       color: var(--muted);
-      font-size: 0.94rem;
       font-weight: 700;
     }
 
-    .exp-body {
-      padding: 0 24px 24px;
-      color: var(--muted);
+    .response-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      font-weight: 950;
+      font-size: 0.84rem;
     }
 
-    .exp-body ul {
+    .response-body {
       margin: 0;
-      padding-left: 20px;
-    }
-
-    .exp-body li {
-      margin: 8px 0;
-    }
-
-    #educationChart,
-    #experienceChart {
-      width: 100%;
-      min-height: 360px;
-    }
-
-    .portfolio-card {
-      min-height: 255px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      min-height: 430px;
+      padding: 22px;
+      overflow: auto;
+      color: #dbeafe;
+      background: #020617;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
     }
 
     .code {
@@ -470,10 +513,7 @@
       border: 1px solid var(--line);
       border-radius: 30px;
       padding: 26px;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.12), transparent 28%),
-        radial-gradient(circle at 85% 20%, rgba(132, 204, 22, 0.1), transparent 30%),
-        rgba(15, 23, 42, 0.88);
+      background: radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.12), transparent 28%), radial-gradient(circle at 85% 20%, rgba(132, 204, 22, 0.1), transparent 30%), rgba(15, 23, 42, 0.88);
       box-shadow: 0 24px 90px rgba(0, 0, 0, 0.28);
       margin-bottom: 22px;
     }
@@ -525,7 +565,8 @@
       .hero-grid,
       .grid-2,
       .grid-3,
-      .compare-grid {
+      .compare-grid,
+      .api-grid {
         grid-template-columns: 1fr;
       }
 
@@ -547,8 +588,9 @@
         padding-top: 58px;
       }
 
-      details.exp summary {
-        grid-template-columns: 1fr;
+      .endpoint-row {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
@@ -689,107 +731,30 @@
           <div class="kicker">Trayectoria</div>
           <h2 class="section-title">Experiencia profesional</h2>
           <p class="section-desc">
-            Vista resumida de trayectoria profesional. Luego podemos convertir cada experiencia
-            en una página propia con logros, tecnologías, evidencias y proyectos asociados.
+            Vista tipo Swagger: selecciona un endpoint GET para ver el detalle como response JSON.
           </p>
         </div>
 
-        <div class="grid-2">
-          <div class="timeline">
+        <div class="api-grid">
+          <article class="api-panel">
+            <div class="api-panel-head">
+              <h3>Work API</h3>
+              <span class="tag">GET only</span>
+            </div>
 
-            <details class="exp" open>
-              <summary>
-                <div>
-                  <div class="company">BBVA Perú</div>
-                  <div class="role">Software Development Analyst I</div>
-                  <div class="period">Junio 2021 - Actualidad</div>
-                </div>
-                <span class="tag">Actual</span>
-              </summary>
+            <div class="api-list" id="workList"></div>
+          </article>
 
-              <div class="exp-body">
-                <ul>
-                  <li>Participación como Solution Architect Delegate, apoyando en diseño y validación de soluciones técnicas.</li>
-                  <li>Desarrollo de soluciones en APX, incluyendo APX Online, ASO, APX Batch, eventos, modelamiento de base de datos y componentes Java.</li>
-                  <li>Participación en certificación de componentes, diagramas técnicos, hojas de diseño, tickets de gobierno APX y certificaciones de calidad.</li>
-                  <li>Trabajo con metodología Scrum, planificación de sprints, seguimiento y mejora continua.</li>
-                </ul>
-
-                <div class="tags">
-                  <span class="tag">APX</span>
-                  <span class="tag">Java</span>
-                  <span class="tag">Oracle</span>
-                  <span class="tag">ASO</span>
-                  <span class="tag">Batch</span>
-                  <span class="tag">Scrum</span>
-                </div>
+          <article class="swagger-response">
+            <div class="response-toolbar">
+              <div>
+                <div class="kicker">Response</div>
+                <strong id="workTitle">GET /api/work/bbva</strong>
               </div>
-            </details>
+              <span class="response-status">200 OK</span>
+            </div>
 
-            <details class="exp">
-              <summary>
-                <div>
-                  <div class="company">ONPE - Sede Central</div>
-                  <div class="role">Analista Programador 3</div>
-                  <div class="period">2020 - 2021</div>
-                </div>
-                <span class="tag">Sector público</span>
-              </summary>
-
-              <div class="exp-body">
-                <ul>
-                  <li>Desarrollo y modificación de funcionalidades para aplicativos asociados a procesos electorales.</li>
-                  <li>Participación en soluciones orientadas a optimizar validaciones de actas, padrones y listas de electores.</li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="exp">
-              <summary>
-                <div>
-                  <div class="company">Biblioteca Nacional del Perú</div>
-                  <div class="role">Especialista en Aplicaciones Web</div>
-                  <div class="period">2019</div>
-                </div>
-                <span class="tag">Web</span>
-              </summary>
-
-              <div class="exp-body">
-                <ul>
-                  <li>Desarrollo de plataforma para inscripción y validación de bibliotecas a nivel nacional.</li>
-                  <li>Implementación con arquitectura multicapa.</li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="exp">
-              <summary>
-                <div>
-                  <div class="company">Experiencia previa</div>
-                  <div class="role">Analista Programador / Desarrollador Junior</div>
-                  <div class="period">2013 - 2019</div>
-                </div>
-                <span class="tag">Base técnica</span>
-              </summary>
-
-              <div class="exp-body">
-                <ul>
-                  <li>Medicard Perú - Analista Programador, 2019.</li>
-                  <li>Policlínico Excellent Medical Center - Analista Programador, 2018.</li>
-                  <li>Consulting & Data S.A.C. - Analista Programador, 2016.</li>
-                  <li>EBusiness Solution S.A.C. - Analista Programador, 2015.</li>
-                  <li>Smart Reasons S.R.L. - Analista Desarrollador Junior, 2014.</li>
-                  <li>Puridiom SAC - Prácticas como programador, 2013.</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <article class="card">
-            <div class="kicker">Visualización D3.js</div>
-            <h3>Camino profesional</h3>
-            <p class="muted">Línea interactiva generada con D3.js para mostrar evolución profesional.</p>
-            <div id="experienceChart"></div>
+            <pre class="response-body"><code id="workResponse"></code></pre>
           </article>
         </div>
       </div>
@@ -799,105 +764,32 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Formación</div>
-          <h2 class="section-title">Educación, capacidades y credenciales</h2>
+          <h2 class="section-title">Educación, cursos y credenciales</h2>
           <p class="section-desc">
-            Sección unificada para educación, habilidades principales y certificaciones.
+            Mismo estilo API: cada curso o certificado funciona como un endpoint consultable.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card">
-            <h3>Formación académica</h3>
-
-            <div class="mini-list">
-              <div class="mini-item">
-                <div class="mini-icon">24</div>
-                <div>
-                  <strong>Maestría en Ciencias de la Computación</strong>
-                  <span>Universidad Nacional de San Agustín de Arequipa · Egresado · 2024</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">18</div>
-                <div>
-                  <strong>Ingeniería de Sistemas</strong>
-                  <span>Universidad Nacional de San Agustín de Arequipa · Bachiller · 2018</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">EN</div>
-                <div>
-                  <strong>Inglés</strong>
-                  <span>Lectura fluida y conversación intermedia.</span>
-                </div>
-              </div>
+        <div class="api-grid">
+          <article class="api-panel">
+            <div class="api-panel-head">
+              <h3>Education API</h3>
+              <span class="tag">GET only</span>
             </div>
+
+            <div class="api-list" id="educationList"></div>
           </article>
 
-          <article class="card">
-            <h3>Constelación de capacidades</h3>
-            <p class="muted">Nodos interactivos con las áreas principales de tu perfil.</p>
-            <div id="educationChart"></div>
-          </article>
-        </div>
-
-        <div class="grid-3" style="margin-top:22px;">
-          <article class="card">
-            <h3>Stack principal</h3>
-            <div class="tags">
-              <span class="tag">Java</span>
-              <span class="tag">APX Online</span>
-              <span class="tag">APX Batch</span>
-              <span class="tag">Spring</span>
-              <span class="tag">Oracle</span>
-              <span class="tag">MongoDB</span>
-              <span class="tag">Angular</span>
-              <span class="tag">AWS</span>
+          <article class="swagger-response">
+            <div class="response-toolbar">
+              <div>
+                <div class="kicker">Response</div>
+                <strong id="educationTitle">GET /api/course/unsa-master</strong>
+              </div>
+              <span class="response-status">200 OK</span>
             </div>
-          </article>
 
-          <article class="card">
-            <h3>Certificaciones</h3>
-            <div class="mini-list">
-              <div class="mini-item">
-                <div class="mini-icon">SA</div>
-                <div>
-                  <strong>Certified SAFe 5 DevOps Practitioner</strong>
-                  <span>DevOps, Agile y flujo de entrega.</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">AR</div>
-                <div>
-                  <strong>Master Local SA 3.0</strong>
-                  <span>Diseño y validación de soluciones técnicas.</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Reconocimientos</h3>
-            <div class="mini-list">
-              <div class="mini-item">
-                <div class="mini-icon">★</div>
-                <div>
-                  <strong>Star of the Month Award</strong>
-                  <span>Tata Consultancy Service · 09/23.</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">AWS</div>
-                <div>
-                  <strong>Fast Track Fundamentos Técnicos AWS</strong>
-                  <span>Formación complementaria en cloud.</span>
-                </div>
-              </div>
-            </div>
+            <pre class="response-body"><code id="educationResponse"></code></pre>
           </article>
         </div>
       </div>
@@ -1038,194 +930,205 @@
       { source: "Cloud", target: "Calidad" }
     ];
 
-    function renderNetwork(selector, nodes, links) {
-      const container = document.querySelector(selector);
+    const workItems = [
+      {
+        title: "BBVA Perú",
+        subtitle: "Software Development Analyst I · Junio 2021 - Actualidad",
+        endpoint: "/api/work/bbva",
+        response: {
+          company: "BBVA Perú",
+          role: "Software Development Analyst I",
+          period: "Junio 2021 - Actualidad",
+          domain: "Banca · Backend · Arquitectura",
+          summary: "Desarrollo de soluciones empresariales en APX, Java, Oracle y procesos de certificación técnica.",
+          highlights: [
+            "Participación como Solution Architect Delegate en diseño y validación técnica.",
+            "Desarrollo en APX Online, APX Batch, ASO, eventos y componentes Java.",
+            "Elaboración de diagramas técnicos, hojas de diseño y tickets de gobierno APX.",
+            "Certificación de componentes y calidad mediante Octa.",
+            "Trabajo bajo Scrum: planificación de sprints, daily meetings y mejora continua."
+          ],
+          stack: ["APX", "Java", "Oracle", "ASO", "Batch", "Scrum", "Octa"]
+        }
+      },
+      {
+        title: "ONPE - Sede Central",
+        subtitle: "Analista Programador 3 · 2020 - 2021",
+        endpoint: "/api/work/onpe",
+        response: {
+          company: "ONPE - Sede Central",
+          role: "Analista Programador 3",
+          period: "2020 - 2021",
+          domain: "Sector público · Procesos electorales",
+          summary: "Desarrollo y mantenimiento de funcionalidades para aplicativos asociados a procesos electorales.",
+          highlights: [
+            "Modificación y desarrollo de nuevas funcionalidades.",
+            "Optimización de validaciones de actas, padrones y listas de electores.",
+            "Soporte a sistemas críticos vinculados a procesos operativos."
+          ],
+          stack: ["Aplicaciones web", "Validación", "Procesos electorales"]
+        }
+      },
+      {
+        title: "Biblioteca Nacional del Perú",
+        subtitle: "Especialista en Aplicaciones Web · 2019",
+        endpoint: "/api/work/bnp",
+        response: {
+          company: "Biblioteca Nacional del Perú",
+          role: "Especialista en Aplicaciones Web",
+          period: "2019",
+          domain: "Aplicaciones web · Gestión pública",
+          summary: "Desarrollo de plataforma para inscripción y validación de bibliotecas a nivel nacional.",
+          highlights: [
+            "Implementación de plataforma web para registro y validación.",
+            "Uso de arquitectura multicapa.",
+            "Participación en solución orientada a cobertura nacional."
+          ],
+          stack: ["Web", "Arquitectura multicapa", "Gestión pública"]
+        }
+      },
+      {
+        title: "Experiencia previa",
+        subtitle: "Analista Programador / Junior · 2013 - 2019",
+        endpoint: "/api/work/previous",
+        response: {
+          company: "Experiencia previa",
+          role: "Analista Programador / Desarrollador Junior",
+          period: "2013 - 2019",
+          domain: "Desarrollo de software · Sistemas empresariales",
+          summary: "Base técnica construida en distintas organizaciones, desarrollando y manteniendo aplicaciones empresariales.",
+          companies: [
+            "Medicard Perú",
+            "Policlínico Excellent Medical Center",
+            "Consulting & Data S.A.C.",
+            "EBusiness Solution S.A.C.",
+            "Smart Reasons S.R.L.",
+            "Puridiom SAC"
+          ],
+          stack: ["Java", "Web", "Bases de datos", "Mantenimiento", "Soporte"]
+        }
+      }
+    ];
+
+    const educationItems = [
+      {
+        title: "Maestría en Ciencias de la Computación",
+        subtitle: "UNSA · Egresado · 2024",
+        endpoint: "/api/course/unsa-master",
+        response: {
+          institution: "Universidad Nacional de San Agustín de Arequipa",
+          program: "Maestría en Ciencias de la Computación",
+          status: "Egresado",
+          year: 2024,
+          focus: ["Computación", "Investigación", "Sistemas distribuidos", "Arquitectura"]
+        }
+      },
+      {
+        title: "Ingeniería de Sistemas",
+        subtitle: "UNSA · Bachiller · 2018",
+        endpoint: "/api/course/unsa-systems",
+        response: {
+          institution: "Universidad Nacional de San Agustín de Arequipa",
+          program: "Ingeniería de Sistemas",
+          degree: "Bachiller",
+          year: 2018,
+          focus: ["Desarrollo de software", "Bases de datos", "Ingeniería de sistemas"]
+        }
+      },
+      {
+        title: "Certified SAFe 5 DevOps Practitioner",
+        subtitle: "Certificación · Agile / DevOps",
+        endpoint: "/api/course/safe-devops",
+        response: {
+          certification: "Certified SAFe 5 DevOps Practitioner",
+          type: "Certificación profesional",
+          areas: ["DevOps", "Agile", "Flujo de entrega", "Colaboración"],
+          value: "Refuerza prácticas de entrega continua, coordinación y mejora del flujo de valor."
+        }
+      },
+      {
+        title: "Master Local SA 3.0",
+        subtitle: "Arquitectura · Diseño de soluciones",
+        endpoint: "/api/course/master-sa",
+        response: {
+          certification: "Master Local SA 3.0",
+          type: "Formación en arquitectura",
+          areas: ["Solution Architecture", "Diseño técnico", "Validación de soluciones"],
+          value: "Habilita participación como delegado de arquitectura en diseño y validación técnica."
+        }
+      },
+      {
+        title: "Fast Track Fundamentos Técnicos AWS",
+        subtitle: "Cloud · AWS",
+        endpoint: "/api/course/aws-fast-track",
+        response: {
+          course: "Fast Track Fundamentos Técnicos AWS",
+          type: "Formación complementaria",
+          areas: ["Cloud", "AWS", "Fundamentos técnicos"],
+          value: "Base para comprender servicios cloud y despliegue de soluciones modernas."
+        }
+      },
+      {
+        title: "Star of the Month Award",
+        subtitle: "Tata Consultancy Service · 09/23",
+        endpoint: "/api/course/star-award",
+        response: {
+          recognition: "Star of the Month Award",
+          organization: "Tata Consultancy Service",
+          date: "09/23",
+          type: "Reconocimiento profesional",
+          value: "Reconocimiento por desempeño profesional y contribución en el entorno laboral."
+        }
+      }
+    ];
+
+    function buildApiList(items, listId, titleId, responseId) {
+      const list = document.querySelector(listId);
+      const title = document.querySelector(titleId);
+      const response = document.querySelector(responseId);
+      list.innerHTML = "";
+      items.forEach((item, index) => {
+        const button = document.createElement("button");
+        button.className = index === 0 ? "endpoint active" : "endpoint";
+        button.innerHTML = "<div class='endpoint-row'><span class='method'>GET</span><span class='path'>" + item.endpoint + "</span></div><small>" + item.title + " · " + item.subtitle + "</small>";
+        button.addEventListener("click", function () {
+          list.querySelectorAll(".endpoint").forEach(function (el) { el.classList.remove("active"); });
+          button.classList.add("active");
+          title.textContent = "GET " + item.endpoint;
+          response.textContent = JSON.stringify(item.response, null, 2);
+        });
+        list.appendChild(button);
+      });
+      title.textContent = "GET " + items[0].endpoint;
+      response.textContent = JSON.stringify(items[0].response, null, 2);
+    }
+
+    function renderHeroNetwork() {
+      const container = document.querySelector("#heroNetwork");
       const width = container.clientWidth || 420;
-      const height = 360;
-
-      d3.select(selector).selectAll("*").remove();
-
-      const svg = d3
-        .select(selector)
-        .attr("viewBox", `0 0 ${width} ${height}`)
-        .attr("preserveAspectRatio", "xMidYMid meet");
-
-      const color = d3.scaleOrdinal()
-        .domain(["core", "backend", "architecture", "domain", "cloud", "quality", "api", "data", "center", "edu", "cert", "skill"])
-        .range(["#38bdf8", "#6366f1", "#14b8a6", "#facc15", "#a855f7", "#fb7185", "#22c55e", "#0ea5e9", "#38bdf8", "#6366f1", "#22c55e", "#facc15"]);
-
-      const simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(88))
-        .force("charge", d3.forceManyBody().strength(-300))
-        .force("center", d3.forceCenter(width / 2, height / 2))
-        .force("collision", d3.forceCollide().radius(44));
-
-      const link = svg.append("g")
-        .selectAll("line")
-        .data(links)
-        .join("line")
-        .attr("stroke", "rgba(148, 163, 184, 0.34)")
-        .attr("stroke-width", 1.5);
-
-      const node = svg.append("g")
-        .selectAll("g")
-        .data(nodes)
-        .join("g")
-        .call(d3.drag()
-          .on("start", function(event, d) {
-            if (!event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-          })
-          .on("drag", function(event, d) {
-            d.fx = event.x;
-            d.fy = event.y;
-          })
-          .on("end", function(event, d) {
-            if (!event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-          })
-        );
-
-      node.append("circle")
-        .attr("r", d => d.id === "Henrry" || d.id === "Educación" ? 36 : 28)
-        .attr("fill", d => color(d.group))
-        .attr("opacity", 0.94)
-        .attr("stroke", "rgba(255,255,255,0.55)")
-        .attr("stroke-width", 1.2);
-
-      node.append("text")
-        .text(d => d.id)
-        .attr("text-anchor", "middle")
-        .attr("dy", 4)
-        .attr("fill", "white")
-        .attr("font-size", 10)
-        .attr("font-weight", 950);
-
-      simulation.on("tick", () => {
-        link
-          .attr("x1", d => d.source.x)
-          .attr("y1", d => d.source.y)
-          .attr("x2", d => d.target.x)
-          .attr("y2", d => d.target.y);
-
-        node.attr("transform", d => `translate(${d.x}, ${d.y})`);
+      const height = 420;
+      d3.select("#heroNetwork").selectAll("*").remove();
+      const svg = d3.select("#heroNetwork").attr("viewBox", "0 0 " + width + " " + height).attr("preserveAspectRatio", "xMidYMid meet");
+      const color = d3.scaleOrdinal().domain(["core", "backend", "architecture", "domain", "cloud", "quality", "api", "data"]).range(["#38bdf8", "#6366f1", "#14b8a6", "#facc15", "#a855f7", "#fb7185", "#22c55e", "#0ea5e9"]);
+      const simulation = d3.forceSimulation(networkNodes).force("link", d3.forceLink(networkLinks).id(function (d) { return d.id; }).distance(92)).force("charge", d3.forceManyBody().strength(-320)).force("center", d3.forceCenter(width / 2, height / 2 - 16)).force("collision", d3.forceCollide().radius(44));
+      const link = svg.append("g").selectAll("line").data(networkLinks).join("line").attr("stroke", "rgba(148, 163, 184, 0.34)").attr("stroke-width", 1.5);
+      const node = svg.append("g").selectAll("g").data(networkNodes).join("g");
+      node.append("circle").attr("r", function (d) { return d.id === "Henrry" ? 36 : 28; }).attr("fill", function (d) { return color(d.group); }).attr("opacity", 0.94).attr("stroke", "rgba(255,255,255,0.55)").attr("stroke-width", 1.2);
+      node.append("text").text(function (d) { return d.id; }).attr("text-anchor", "middle").attr("dy", 4).attr("fill", "white").attr("font-size", 10).attr("font-weight", 950);
+      simulation.on("tick", function () {
+        link.attr("x1", function (d) { return d.source.x; }).attr("y1", function (d) { return d.source.y; }).attr("x2", function (d) { return d.target.x; }).attr("y2", function (d) { return d.target.y; });
+        node.attr("transform", function (d) { return "translate(" + d.x + ", " + d.y + ")"; });
       });
     }
 
-    const experience = [
-      { year: 2013, label: "Puridiom" },
-      { year: 2014, label: "Smart Reasons" },
-      { year: 2015, label: "EBusiness" },
-      { year: 2016, label: "Consulting & Data" },
-      { year: 2019, label: "BNP / Medicard" },
-      { year: 2020, label: "ONPE" },
-      { year: 2021, label: "BBVA" },
-      { year: 2024, label: "Maestría" }
-    ];
-
-    function renderExperienceChart() {
-      const container = document.querySelector("#experienceChart");
-      const width = container.clientWidth || 520;
-      const height = 360;
-      const margin = { top: 34, right: 28, bottom: 70, left: 32 };
-
-      container.innerHTML = "";
-
-      const svg = d3.select("#experienceChart")
-        .append("svg")
-        .attr("viewBox", `0 0 ${width} ${height}`)
-        .attr("preserveAspectRatio", "xMidYMid meet");
-
-      const x = d3.scaleLinear()
-        .domain([2013, 2026])
-        .range([margin.left, width - margin.right]);
-
-      const y = height / 2;
-
-      svg.append("line")
-        .attr("x1", x(2013))
-        .attr("y1", y)
-        .attr("x2", x(2026))
-        .attr("y2", y)
-        .attr("stroke", "rgba(148, 163, 184, 0.32)")
-        .attr("stroke-width", 3)
-        .attr("stroke-linecap", "round");
-
-      svg.append("g")
-        .selectAll("circle")
-        .data(experience)
-        .join("circle")
-        .attr("cx", d => x(d.year))
-        .attr("cy", y)
-        .attr("r", 0)
-        .attr("fill", d => d.label === "BBVA" ? "#38bdf8" : "#6366f1")
-        .attr("stroke", "rgba(255,255,255,0.65)")
-        .attr("stroke-width", 1.3)
-        .transition()
-        .duration(700)
-        .delay((d, i) => i * 90)
-        .attr("r", d => d.label === "BBVA" ? 13 : 8);
-
-      svg.append("g")
-        .selectAll("text.year")
-        .data(experience)
-        .join("text")
-        .attr("x", d => x(d.year))
-        .attr("y", y + 34)
-        .attr("text-anchor", "middle")
-        .attr("fill", "#cbd5e1")
-        .attr("font-size", 11)
-        .attr("font-weight", 900)
-        .text(d => d.year);
-
-      svg.append("g")
-        .selectAll("text.label")
-        .data(experience)
-        .join("text")
-        .attr("x", d => x(d.year))
-        .attr("y", (d, i) => i % 2 === 0 ? y - 28 : y - 48)
-        .attr("text-anchor", "middle")
-        .attr("fill", "#f8fafc")
-        .attr("font-size", 10)
-        .attr("font-weight", 850)
-        .text(d => d.label);
-    }
-
-    const educationNodes = [
-      { id: "Educación", group: "center" },
-      { id: "UNSA", group: "edu" },
-      { id: "Maestría", group: "edu" },
-      { id: "Ingeniería", group: "edu" },
-      { id: "SAFe", group: "cert" },
-      { id: "AWS", group: "cert" },
-      { id: "Arquitectura", group: "skill" },
-      { id: "Scrum", group: "skill" },
-      { id: "Java", group: "skill" },
-      { id: "APX", group: "skill" }
-    ];
-
-    const educationLinks = [
-      { source: "Educación", target: "UNSA" },
-      { source: "UNSA", target: "Maestría" },
-      { source: "UNSA", target: "Ingeniería" },
-      { source: "Educación", target: "SAFe" },
-      { source: "Educación", target: "AWS" },
-      { source: "Educación", target: "Arquitectura" },
-      { source: "Educación", target: "Scrum" },
-      { source: "Arquitectura", target: "Java" },
-      { source: "Java", target: "APX" }
-    ];
-
     function renderAll() {
-      renderNetwork("#heroNetwork", networkNodes, networkLinks);
-      renderExperienceChart();
-      renderNetwork("#educationChart", educationNodes, educationLinks);
+      renderHeroNetwork();
+      buildApiList(workItems, "#workList", "#workTitle", "#workResponse");
+      buildApiList(educationItems, "#educationList", "#educationTitle", "#educationResponse");
     }
 
     renderAll();
-    window.addEventListener("resize", renderAll);
+    window.addEventListener("resize", renderHeroNetwork);
   </script>
 
 </body>
