@@ -1,55 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- =========================================================
-       PORTAFOLIO WEB - HENRRY ARIAS
-       Archivo único: index.html
-       Librería usada: D3.js
-       ========================================================= -->
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Henrry Arias | Software Engineer | Java, APX, Spring, Cloud</title>
+  <title>Henrry Arias | Software Engineer</title>
 
-  <meta
-    name="description"
-    content="Portafolio profesional de Henrry Arias, Software Engineer especializado en Java, APX, Spring, Oracle, arquitectura de software, banca, cloud, Angular y desarrollo backend."
-  />
-
-  <meta
-    name="keywords"
-    content="Henrry Arias, Ivan Arias, Software Engineer, Java Developer, Backend Developer, APX, APX Online, APX Batch, Spring, Spring Batch, Oracle, AWS, Azure, Angular, BBVA, ONPE, portafolio, CV web"
-  />
-
+  <meta name="description" content="Portafolio profesional de Henrry Arias, Software Engineer especializado en Java, APX, Spring, Oracle, banca, cloud y desarrollo backend." />
+  <meta name="keywords" content="Henrry Arias, Ivan Arias, Software Engineer, Java Developer, Backend Developer, APX, Spring, Oracle, AWS, Azure, Angular, BBVA, portafolio profesional" />
   <meta name="author" content="Henrry Arias" />
   <meta name="robots" content="index, follow" />
-  <meta name="language" content="Spanish" />
   <meta name="theme-color" content="#0f172a" />
 
   <link rel="canonical" href="https://ivan-arias.github.io/" />
 
-  <!-- Open Graph: para WhatsApp, LinkedIn, Facebook -->
   <meta property="og:title" content="Henrry Arias | Software Engineer" />
-  <meta
-    property="og:description"
-    content="Java, APX, Spring, Oracle, arquitectura de software, banca, cloud y desarrollo backend."
-  />
+  <meta property="og:description" content="Portafolio profesional: Java, APX, Spring, Oracle, banca, cloud y arquitectura de software." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ivan-arias.github.io/" />
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Henrry Arias | Software Engineer" />
-  <meta
-    name="twitter:description"
-    content="Portafolio profesional de Henrry Arias: Java, APX, Spring, Oracle, Cloud y arquitectura de software."
-  />
-
-  <!-- D3.js -->
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
-  <!-- Datos estructurados para SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,7 +32,7 @@
     "email": "mailto:ivan.hariasaqp@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Santiago de Surco, Lima",
+      "addressLocality": "Lima",
       "addressCountry": "PE"
     },
     "worksFor": {
@@ -72,43 +43,22 @@
       "@type": "CollegeOrUniversity",
       "name": "Universidad Nacional de San Agustín de Arequipa"
     },
-    "knowsAbout": [
-      "Java",
-      "APX",
-      "APX Online",
-      "APX Batch",
-      "Spring",
-      "Spring Batch",
-      "Oracle",
-      "MongoDB",
-      "SQL Server",
-      "AWS",
-      "Azure",
-      "Angular",
-      "Scrum",
-      "Software Architecture",
-      "Backend Development"
-    ],
     "sameAs": [
-      "https://github.com/Ivan-Arias"
+      "https://github.com/Ivan-Arias",
+      "https://www.linkedin.com/in/henrry-arias/"
     ]
   }
   </script>
 
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-2: #111827;
-      --card: rgba(15, 23, 42, 0.82);
-      --card-2: rgba(30, 41, 59, 0.88);
+      --bg: #020617;
+      --card: rgba(15, 23, 42, 0.86);
       --text: #f8fafc;
       --muted: #94a3b8;
       --line: rgba(148, 163, 184, 0.22);
       --accent: #38bdf8;
       --accent-2: #6366f1;
-      --green: #22c55e;
-      --yellow: #facc15;
-      --red: #fb7185;
       --max: 1180px;
     }
 
@@ -122,9 +72,9 @@
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34%),
-        radial-gradient(circle at top right, rgba(99, 102, 241, 0.18), transparent 30%),
-        linear-gradient(180deg, #020617 0%, #0f172a 45%, #020617 100%);
+        radial-gradient(circle at 12% 0%, rgba(56, 189, 248, 0.18), transparent 30%),
+        radial-gradient(circle at 88% 8%, rgba(99, 102, 241, 0.18), transparent 32%),
+        linear-gradient(180deg, #020617 0%, #0f172a 42%, #020617 100%);
       line-height: 1.6;
     }
 
@@ -148,7 +98,7 @@
     }
 
     .nav-inner {
-      height: 72px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -160,18 +110,18 @@
       align-items: center;
       gap: 12px;
       font-weight: 900;
-      letter-spacing: -0.04em;
     }
 
     .brand-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 16px;
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 18px 50px rgba(56, 189, 248, 0.24);
       color: white;
+      background: linear-gradient(135deg, #38bdf8, #6366f1 55%, #a855f7);
+      box-shadow: 0 18px 48px rgba(56, 189, 248, 0.22);
+      font-weight: 950;
     }
 
     .nav-links {
@@ -180,7 +130,7 @@
       gap: 18px;
       color: var(--muted);
       font-size: 0.93rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .nav-links a:hover {
@@ -195,11 +145,10 @@
       padding: 12px 18px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(15, 23, 42, 0.74);
+      background: rgba(15, 23, 42, 0.78);
       color: var(--text);
-      font-weight: 800;
+      font-weight: 900;
       transition: 0.2s ease;
-      cursor: pointer;
     }
 
     .btn:hover {
@@ -219,21 +168,19 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 36px;
       align-items: center;
     }
 
     .eyebrow {
       display: inline-flex;
-      align-items: center;
-      gap: 10px;
       padding: 8px 14px;
       border-radius: 999px;
       color: #bae6fd;
       background: rgba(56, 189, 248, 0.12);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      font-weight: 900;
+      font-weight: 950;
       font-size: 0.9rem;
     }
 
@@ -251,7 +198,7 @@
     .hero-subtitle {
       max-width: 760px;
       color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.23rem);
     }
 
     .hero-actions {
@@ -268,11 +215,9 @@
       border: 1px solid var(--line);
       overflow: hidden;
       background:
-        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.28), transparent 42%),
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.26), transparent 42%),
         rgba(15, 23, 42, 0.86);
       box-shadow: 0 24px 90px rgba(0, 0, 0, 0.3);
-      transform-style: preserve-3d;
-      perspective: 1000px;
     }
 
     #heroNetwork {
@@ -287,7 +232,7 @@
       padding: 20px;
       border-radius: 24px;
       border: 1px solid rgba(148, 163, 184, 0.2);
-      background: rgba(2, 6, 23, 0.78);
+      background: rgba(2, 6, 23, 0.82);
       backdrop-filter: blur(16px);
     }
 
@@ -332,10 +277,6 @@
     }
 
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 26px;
       margin-bottom: 28px;
     }
 
@@ -344,7 +285,7 @@
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: 0.78rem;
-      font-weight: 900;
+      font-weight: 950;
       margin-bottom: 8px;
     }
 
@@ -411,6 +352,44 @@
       font-weight: 900;
     }
 
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.38);
+    }
+
+    .mini-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 950;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
     .timeline {
       display: grid;
       gap: 16px;
@@ -439,12 +418,12 @@
 
     .company {
       color: var(--accent);
-      font-weight: 900;
+      font-weight: 950;
     }
 
     .role {
       font-size: 1.22rem;
-      font-weight: 900;
+      font-weight: 950;
       letter-spacing: -0.02em;
     }
 
@@ -468,52 +447,10 @@
       margin: 8px 0;
     }
 
-    .chart-card {
-      min-height: 430px;
-    }
-
-    #skillsChart,
+    #educationChart,
     #experienceChart {
       width: 100%;
       min-height: 360px;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .mini-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 16px;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: rgba(2, 6, 23, 0.38);
-    }
-
-    .mini-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    }
-
-    .mini-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .mini-item span {
-      color: var(--muted);
-      font-size: 0.94rem;
     }
 
     .portfolio-card {
@@ -523,27 +460,54 @@
       justify-content: space-between;
     }
 
-    .portfolio-card .code {
+    .code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       color: #bae6fd;
       font-size: 0.9rem;
     }
 
-    .contact-card {
-      text-align: center;
-      padding: 46px 28px;
-      border-radius: 34px;
+    .architecture-card {
       border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 26px;
       background:
-        radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 46%),
-        rgba(15, 23, 42, 0.82);
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(132, 204, 22, 0.1), transparent 30%),
+        rgba(15, 23, 42, 0.88);
+      box-shadow: 0 24px 90px rgba(0, 0, 0, 0.28);
+      margin-bottom: 22px;
     }
 
-    .contact-card h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2.1rem, 5vw, 3.8rem);
-      letter-spacing: -0.07em;
-      line-height: 1;
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .compare-panel {
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 22px;
+      padding: 20px;
+      background: rgba(2, 6, 23, 0.34);
+    }
+
+    .blue {
+      color: #7dd3fc;
+    }
+
+    .green {
+      color: #a3e635;
+    }
+
+    .flow-box {
+      margin: 18px 0;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.84);
+      border: 1px solid var(--line);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #cbd5e1;
+      font-size: 0.85rem;
     }
 
     .muted {
@@ -557,53 +521,16 @@
       text-align: center;
     }
 
-    @media print {
-      .navbar,
-      .hero-card,
-      .hero-actions,
-      footer {
-        display: none !important;
-      }
-
-      body {
-        background: white;
-        color: black;
-      }
-
-      .card,
-      details.exp,
-      .contact-card {
-        background: white;
-        color: black;
-        border: 1px solid #ddd;
-        box-shadow: none;
-      }
-
-      .muted,
-      .card p,
-      .exp-body,
-      .period {
-        color: #333;
-      }
-
-      section {
-        padding: 24px 0;
-      }
-    }
-
     @media (max-width: 980px) {
       .hero-grid,
       .grid-2,
-      .grid-3 {
+      .grid-3,
+      .compare-grid {
         grid-template-columns: 1fr;
       }
 
       .stats {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .section-header {
-        display: block;
       }
 
       .nav-links {
@@ -629,9 +556,6 @@
 
 <body>
 
-  <!-- =========================================================
-       NAVBAR
-       ========================================================= -->
   <nav class="navbar">
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
@@ -642,50 +566,43 @@
       <div class="nav-links">
         <a href="#perfil">Perfil</a>
         <a href="#experiencia">Experiencia</a>
-        <a href="#skills">Skills</a>
         <a href="#educacion">Educación</a>
-        <a href="#certificados">Certificados</a>
         <a href="#portafolio">Portafolio</a>
-        <a href="#contacto">Contacto</a>
       </div>
     </div>
   </nav>
 
   <main id="inicio">
 
-    <!-- =========================================================
-         HERO
-         ========================================================= -->
     <header class="hero">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Software Engineer · Backend · Banca · Arquitectura</span>
 
           <h1>
-            Desarrollo soluciones <span>empresariales</span> con Java, APX y Cloud.
+            Desarrollo soluciones <span>empresariales</span> con enfoque técnico y escalable.
           </h1>
 
           <p class="hero-subtitle">
-            Desarrollador de aplicaciones con enfoque en innovación, mejora continua,
-            arquitectura de componentes, integración bancaria, automatización y entrega
-            de software de alto impacto.
+            Experiencia en desarrollo backend, arquitectura de componentes, integración bancaria,
+            automatización, calidad de software y entrega de soluciones para entornos empresariales.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#experiencia">Ver experiencia</a>
             <a class="btn" href="#portafolio">Ver portafolio</a>
+            <a class="btn" href="mailto:ivan.hariasaqp@gmail.com">Enviar correo</a>
+            <a class="btn" href="https://www.linkedin.com/in/henrry-arias/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn" href="https://github.com/Ivan-Arias" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="mailto:ivan.hariasaqp@gmail.com">Correo</a>
-            <button class="btn" onclick="window.print()">Imprimir / Guardar CV</button>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Mapa visual de tecnologías">
+        <aside class="hero-card" aria-label="Mapa visual interactivo">
           <svg id="heroNetwork"></svg>
 
           <div class="hero-card-content">
             <h2>Henrry I. Arias M.</h2>
-            <p>Java · APX · Spring · Oracle · AWS · Angular · Scrum</p>
+            <p>Software Engineer</p>
           </div>
         </aside>
       </div>
@@ -710,9 +627,6 @@
       </div>
     </header>
 
-    <!-- =========================================================
-         PERFIL
-         ========================================================= -->
     <section id="perfil">
       <div class="container grid-2">
         <article class="card">
@@ -721,15 +635,14 @@
 
           <p>
             Desarrollador de aplicaciones con enfoque en innovación y mejora continua.
-            Me especializo en liderar proyectos desde la planificación hasta la entrega,
-            con un enfoque organizado, técnico y orientado a resultados.
+            Me especializo en participar en proyectos desde la planificación técnica hasta
+            la entrega, con una orientación clara a resultados, calidad y escalabilidad.
           </p>
 
           <p>
-            Trabajo con equipos multidisciplinarios fomentando la colaboración,
-            la comunicación abierta y el aprendizaje constante. Me interesa incorporar
-            herramientas modernas que mejoren el rendimiento, la escalabilidad y la
-            calidad del software entregado.
+            Trabajo con equipos multidisciplinarios, promoviendo comunicación clara,
+            colaboración y aprendizaje constante. Me interesa incorporar herramientas
+            modernas para mejorar la calidad, velocidad y mantenibilidad del software.
           </p>
 
           <div class="tags">
@@ -742,57 +655,43 @@
         </article>
 
         <article class="card">
-          <div class="kicker">Contacto</div>
-          <h2 class="section-title">Datos públicos</h2>
+          <div class="kicker">Datos públicos</div>
+          <h2 class="section-title">Resumen</h2>
 
           <div class="mini-list">
             <div class="mini-item">
-              <div class="mini-icon">@</div>
+              <div class="mini-icon">IN</div>
               <div>
-                <strong>Email</strong>
-                <span>ivan.hariasaqp@gmail.com</span>
+                <strong>LinkedIn</strong>
+                <span>
+                  <a href="https://www.linkedin.com/in/henrry-arias/" target="_blank" rel="noopener">
+                    linkedin.com/in/henrry-arias
+                  </a>
+                </span>
               </div>
             </div>
 
             <div class="mini-item">
-              <div class="mini-icon">⌂</div>
+              <div class="mini-icon">PE</div>
               <div>
                 <strong>Ubicación</strong>
-                <span>Santiago de Surco, Lima, Perú</span>
-              </div>
-            </div>
-
-            <div class="mini-item">
-              <div class="mini-icon">GH</div>
-              <div>
-                <strong>GitHub</strong>
-                <span>github.com/Ivan-Arias</span>
+                <span>Lima, Perú</span>
               </div>
             </div>
           </div>
-
-          <p class="muted">
-            Recomendación: no publiques tu DNI en una página pública. Para reclutadores,
-            basta con correo, GitHub, LinkedIn y ciudad.
-          </p>
         </article>
       </div>
     </section>
 
-    <!-- =========================================================
-         EXPERIENCIA PROFESIONAL
-         ========================================================= -->
     <section id="experiencia">
       <div class="container">
         <div class="section-header">
-          <div>
-            <div class="kicker">Trayectoria</div>
-            <h2 class="section-title">Experiencia profesional</h2>
-            <p class="section-desc">
-              Esta sección está lista para crecer. Luego podemos convertir cada experiencia
-              en una página propia con logros, arquitectura, evidencias, tecnologías y capturas.
-            </p>
-          </div>
+          <div class="kicker">Trayectoria</div>
+          <h2 class="section-title">Experiencia profesional</h2>
+          <p class="section-desc">
+            Vista resumida de trayectoria profesional. Luego podemos convertir cada experiencia
+            en una página propia con logros, tecnologías, evidencias y proyectos asociados.
+          </p>
         </div>
 
         <div class="grid-2">
@@ -803,45 +702,25 @@
                 <div>
                   <div class="company">BBVA Perú</div>
                   <div class="role">Software Development Analyst I</div>
-                  <div class="period">16 de junio de 2021 - Actualidad</div>
+                  <div class="period">Junio 2021 - Actualidad</div>
                 </div>
                 <span class="tag">Actual</span>
               </summary>
 
               <div class="exp-body">
                 <ul>
-                  <li>
-                    Participación como <strong>Solution Architect Delegate</strong>,
-                    habilitado mediante el curso Master Local SA 3.0 para participar
-                    en diseño y validación de soluciones técnicas.
-                  </li>
-                  <li>
-                    Desarrollo de soluciones en <strong>APX</strong>, incluyendo
-                    APX Online, servicios ASO, APX Batch, eventos, modelamiento de
-                    base de datos y componentes Java.
-                  </li>
-                  <li>
-                    Participación en certificación de componentes APX, diagramas de
-                    componentes, hojas de diseño técnico, tickets de pase, tickets de
-                    gobierno APX y certificaciones de calidad mediante Octa.
-                  </li>
-                  <li>
-                    Aplicación de <strong>SCRUM</strong> en planificación de sprints,
-                    daily meetings, seguimiento y mejora continua.
-                  </li>
-                  <li>
-                    Coordinación de actividades dentro del equipo de desarrollo,
-                    distribución de responsabilidades y comunicación técnica constante.
-                  </li>
+                  <li>Participación como Solution Architect Delegate, apoyando en diseño y validación de soluciones técnicas.</li>
+                  <li>Desarrollo de soluciones en APX, incluyendo APX Online, ASO, APX Batch, eventos, modelamiento de base de datos y componentes Java.</li>
+                  <li>Participación en certificación de componentes, diagramas técnicos, hojas de diseño, tickets de gobierno APX y certificaciones de calidad.</li>
+                  <li>Trabajo con metodología Scrum, planificación de sprints, seguimiento y mejora continua.</li>
                 </ul>
 
                 <div class="tags">
-                  <span class="tag">APX Online</span>
-                  <span class="tag">APX Batch</span>
-                  <span class="tag">ASO</span>
+                  <span class="tag">APX</span>
                   <span class="tag">Java</span>
                   <span class="tag">Oracle</span>
-                  <span class="tag">Octa</span>
+                  <span class="tag">ASO</span>
+                  <span class="tag">Batch</span>
                   <span class="tag">Scrum</span>
                 </div>
               </div>
@@ -859,21 +738,9 @@
 
               <div class="exp-body">
                 <ul>
-                  <li>
-                    Modificación y desarrollo de nuevas funcionalidades para aplicativos
-                    relacionados con procesos electorales.
-                  </li>
-                  <li>
-                    Participación en soluciones orientadas a reducir tiempos de validación
-                    de actas, padrones y listas de electores.
-                  </li>
+                  <li>Desarrollo y modificación de funcionalidades para aplicativos asociados a procesos electorales.</li>
+                  <li>Participación en soluciones orientadas a optimizar validaciones de actas, padrones y listas de electores.</li>
                 </ul>
-
-                <div class="tags">
-                  <span class="tag">Aplicaciones web</span>
-                  <span class="tag">Procesos electorales</span>
-                  <span class="tag">Validación</span>
-                </div>
               </div>
             </details>
 
@@ -889,20 +756,9 @@
 
               <div class="exp-body">
                 <ul>
-                  <li>
-                    Desarrollo de plataforma para inscripción y validación de bibliotecas
-                    a nivel nacional.
-                  </li>
-                  <li>
-                    Uso de arquitectura multicapa para organizar la solución.
-                  </li>
+                  <li>Desarrollo de plataforma para inscripción y validación de bibliotecas a nivel nacional.</li>
+                  <li>Implementación con arquitectura multicapa.</li>
                 </ul>
-
-                <div class="tags">
-                  <span class="tag">Arquitectura multicapa</span>
-                  <span class="tag">Web</span>
-                  <span class="tag">Gestión pública</span>
-                </div>
               </div>
             </details>
 
@@ -919,321 +775,126 @@
               <div class="exp-body">
                 <ul>
                   <li>Medicard Perú - Analista Programador, 2019.</li>
-                  <li>Policlínico Excellent Medical Center E.I.R.L. - Analista Programador, 2018.</li>
+                  <li>Policlínico Excellent Medical Center - Analista Programador, 2018.</li>
                   <li>Consulting & Data S.A.C. - Analista Programador, 2016.</li>
-                  <li>EBUSINESS SOLUTION S.A.C. - Analista Programador, 2015.</li>
-                  <li>SMART REASONS S.R.L. - Analista Desarrollador Junior, 2014.</li>
+                  <li>EBusiness Solution S.A.C. - Analista Programador, 2015.</li>
+                  <li>Smart Reasons S.R.L. - Analista Desarrollador Junior, 2014.</li>
                   <li>Puridiom SAC - Prácticas como programador, 2013.</li>
                 </ul>
               </div>
             </details>
           </div>
 
-          <article class="card chart-card">
+          <article class="card">
             <div class="kicker">Visualización D3.js</div>
-            <h3>Línea de experiencia</h3>
-            <p class="muted">
-              Gráfico generado con D3.js para mostrar la trayectoria profesional.
-            </p>
-            <div id="experienceChart" aria-label="Línea de experiencia profesional"></div>
+            <h3>Camino profesional</h3>
+            <p class="muted">Línea interactiva generada con D3.js para mostrar evolución profesional.</p>
+            <div id="experienceChart"></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         SKILLS
-         ========================================================= -->
-    <section id="skills">
+    <section id="educacion">
       <div class="container">
         <div class="section-header">
-          <div>
-            <div class="kicker">Stack técnico</div>
-            <h2 class="section-title">Habilidades y tecnologías</h2>
-            <p class="section-desc">
-              El gráfico es editable desde el arreglo JavaScript <code>skills</code>.
-              Puedes ajustar porcentajes según tu nivel real o según el enfoque laboral que quieras vender.
-            </p>
-          </div>
+          <div class="kicker">Formación</div>
+          <h2 class="section-title">Educación, capacidades y credenciales</h2>
+          <p class="section-desc">
+            Sección unificada para educación, habilidades principales y certificaciones.
+          </p>
         </div>
 
         <div class="grid-2">
-          <article class="card chart-card">
-            <h3>Mapa de fortalezas</h3>
-            <div id="skillsChart" aria-label="Gráfico de habilidades técnicas"></div>
-          </article>
-
           <article class="card">
-            <h3>Software y plataformas</h3>
+            <h3>Formación académica</h3>
 
             <div class="mini-list">
               <div class="mini-item">
-                <div class="mini-icon">L</div>
+                <div class="mini-icon">24</div>
                 <div>
-                  <strong>Lenguajes</strong>
-                  <span>Java 11, Python 3.11, C++</span>
+                  <strong>Maestría en Ciencias de la Computación</strong>
+                  <span>Universidad Nacional de San Agustín de Arequipa · Egresado · 2024</span>
                 </div>
               </div>
 
               <div class="mini-item">
-                <div class="mini-icon">F</div>
+                <div class="mini-icon">18</div>
                 <div>
-                  <strong>Frameworks y bibliotecas</strong>
-                  <span>APX Online, APX Batch, Spring Framework, Google Sheet API, Angular 12, Swagger Hub, Mockito, RxJava, Spring WebFlux</span>
+                  <strong>Ingeniería de Sistemas</strong>
+                  <span>Universidad Nacional de San Agustín de Arequipa · Bachiller · 2018</span>
                 </div>
               </div>
 
               <div class="mini-item">
-                <div class="mini-icon">DB</div>
+                <div class="mini-icon">EN</div>
                 <div>
-                  <strong>Base de datos</strong>
-                  <span>Oracle 19c, MongoDB 6.0, SQL Server 2012</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">☁</div>
-                <div>
-                  <strong>Cloud y calidad</strong>
-                  <span>AWS Developer, JUnit4, SonarQube, TDD, Maven</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">AI</div>
-                <div>
-                  <strong>Inteligencia artificial</strong>
-                  <span>Redes neuronales, NLP y aprendizaje supervisado</span>
+                  <strong>Inglés</strong>
+                  <span>Lectura fluida y conversación intermedia.</span>
                 </div>
               </div>
             </div>
+          </article>
+
+          <article class="card">
+            <h3>Constelación de capacidades</h3>
+            <p class="muted">Nodos interactivos con las áreas principales de tu perfil.</p>
+            <div id="educationChart"></div>
           </article>
         </div>
 
         <div class="grid-3" style="margin-top:22px;">
           <article class="card">
-            <h3>Herramientas de desarrollo</h3>
+            <h3>Stack principal</h3>
             <div class="tags">
-              <span class="tag">Eclipse</span>
-              <span class="tag">Visual Studio Code</span>
-              <span class="tag">IntelliJ</span>
-              <span class="tag">CodeLab</span>
-              <span class="tag">NetBeans</span>
+              <span class="tag">Java</span>
+              <span class="tag">APX Online</span>
+              <span class="tag">APX Batch</span>
+              <span class="tag">Spring</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Angular</span>
+              <span class="tag">AWS</span>
             </div>
           </article>
 
           <article class="card">
-            <h3>Gestión y calidad</h3>
-            <div class="tags">
-              <span class="tag">Git-flow</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">Bitbucket</span>
-              <span class="tag">SonarQube</span>
-              <span class="tag">Apache Maven</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Datos y reportes</h3>
-            <div class="tags">
-              <span class="tag">SQL Developer</span>
-              <span class="tag">MySQL Workbench</span>
-              <span class="tag">PowerDesigner</span>
-              <span class="tag">Toad</span>
-              <span class="tag">TIBCO Jasper Report</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         EDUCACIÓN
-         ========================================================= -->
-    <section id="educacion">
-      <div class="container grid-2">
-        <article class="card">
-          <div class="kicker">Educación</div>
-          <h2 class="section-title">Formación académica</h2>
-
-          <div class="mini-list">
-            <div class="mini-item">
-              <div class="mini-icon">24</div>
-              <div>
-                <strong>Maestría en Ciencias de la Computación</strong>
-                <span>Universidad Nacional de San Agustín de Arequipa · Egresado · 2024</span>
-              </div>
-            </div>
-
-            <div class="mini-item">
-              <div class="mini-icon">18</div>
-              <div>
-                <strong>Ingeniería de Sistemas</strong>
-                <span>Universidad Nacional de San Agustín de Arequipa · Bachiller · 2018</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Idiomas e intereses</div>
-          <h2 class="section-title">Perfil complementario</h2>
-
-          <div class="mini-list">
-            <div class="mini-item">
-              <div class="mini-icon">EN</div>
-              <div>
-                <strong>Inglés</strong>
-                <span>Lectura fluida y habilidades de conversación intermedias.</span>
-              </div>
-            </div>
-
-            <div class="mini-item">
-              <div class="mini-icon">♟</div>
-              <div>
-                <strong>Intereses</strong>
-                <span>Programar, jugar ajedrez, películas de ciencia ficción, series, tiempo en familia y colección de monedas del BCRP.</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         CERTIFICADOS
-         ========================================================= -->
-    <section id="certificados">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="kicker">Certificados</div>
-            <h2 class="section-title">Certificaciones y reconocimientos</h2>
-            <p class="section-desc">
-              Todo está en HTML. Luego puedes agregar enlaces de validación o páginas
-              internas para cada certificado.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>Certified SAFe 5 DevOps Practitioner</h3>
-            <p>
-              Certificación orientada a prácticas DevOps, entrega continua,
-              colaboración y optimización del flujo de valor.
-            </p>
-            <div class="tags">
-              <span class="tag">SAFe</span>
-              <span class="tag">DevOps</span>
-              <span class="tag">Agile</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Star of the Month Award</h3>
-            <p>
-              Reconocimiento profesional recibido en 09/23 por Tata Consultancy Service.
-            </p>
-            <div class="tags">
-              <span class="tag">Reconocimiento</span>
-              <span class="tag">TCS</span>
-              <span class="tag">09/23</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Master Local SA 3.0</h3>
-            <p>
-              Formación que habilita la participación como delegado de arquitectura
-              para diseño y validación de soluciones técnicas.
-            </p>
-            <div class="tags">
-              <span class="tag">Architecture</span>
-              <span class="tag">Solution Design</span>
-              <span class="tag">BBVA</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         EDUCACIÓN COMPLEMENTARIA
-         ========================================================= -->
-    <section id="educacion-complementaria">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="kicker">Aprendizaje continuo</div>
-            <h2 class="section-title">Educación complementaria</h2>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Cursos y formación técnica</h3>
-
+            <h3>Certificaciones</h3>
             <div class="mini-list">
+              <div class="mini-item">
+                <div class="mini-icon">SA</div>
+                <div>
+                  <strong>Certified SAFe 5 DevOps Practitioner</strong>
+                  <span>DevOps, Agile y flujo de entrega.</span>
+                </div>
+              </div>
+
+              <div class="mini-item">
+                <div class="mini-icon">AR</div>
+                <div>
+                  <strong>Master Local SA 3.0</strong>
+                  <span>Diseño y validación de soluciones técnicas.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Reconocimientos</h3>
+            <div class="mini-list">
+              <div class="mini-item">
+                <div class="mini-icon">★</div>
+                <div>
+                  <strong>Star of the Month Award</strong>
+                  <span>Tata Consultancy Service · 09/23.</span>
+                </div>
+              </div>
+
               <div class="mini-item">
                 <div class="mini-icon">AWS</div>
                 <div>
                   <strong>Fast Track Fundamentos Técnicos AWS</strong>
-                  <span>Formación complementaria en fundamentos cloud.</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">ISO</div>
-                <div>
-                  <strong>ISO/IEC 29110-5-1-2</strong>
-                  <span>Implementación del Perfil Básico en Desarrollo de Software.</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">R</div>
-                <div>
-                  <strong>Conducta Responsable en Investigación</strong>
-                  <span>Formación académica complementaria.</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">IP</div>
-                <div>
-                  <strong>Buenas prácticas en propiedad intelectual</strong>
-                  <span>Uso académico responsable de la propiedad intelectual.</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Congresos y eventos</h3>
-
-            <div class="mini-list">
-              <div class="mini-item">
-                <div class="mini-icon">III</div>
-                <div>
-                  <strong>III Congreso Internacional de Ingeniería de Sistemas</strong>
-                  <span>Arequipa, Perú · 24 al 26 de noviembre de 2022 · Universidad Nacional de San Agustín.</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">IN</div>
-                <div>
-                  <strong>Semana de la Innovación 2022</strong>
-                  <span>Arequipa, Perú · 14 al 18 de noviembre de 2022 · Universidad Nacional de San Agustín.</span>
-                </div>
-              </div>
-
-              <div class="mini-item">
-                <div class="mini-icon">CI</div>
-                <div>
-                  <strong>XXIII Congreso Internacional de Informática y Sistemas - CIIS 2022</strong>
-                  <span>Arequipa, Perú · 07 al 11 de noviembre de 2022 · Universidad Nacional Jorge Basadre Grohmann.</span>
+                  <span>Formación complementaria en cloud.</span>
                 </div>
               </div>
             </div>
@@ -1242,19 +903,59 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         PORTAFOLIO
-         ========================================================= -->
     <section id="portafolio">
       <div class="container">
         <div class="section-header">
-          <div>
-            <div class="kicker">Portafolio</div>
-            <h2 class="section-title">Proyectos destacados</h2>
-            <p class="section-desc">
-              Esta zona es para agregar más detalle después. Por ahora queda preparada
-              como vitrina profesional.
-            </p>
+          <div class="kicker">Portafolio</div>
+          <h2 class="section-title">Proyectos y piezas técnicas</h2>
+          <p class="section-desc">
+            Aquí podemos seguir agregando detalle por proyecto: arquitectura, capturas,
+            repositorio, métricas, documentación y decisiones técnicas.
+          </p>
+        </div>
+
+        <div class="architecture-card">
+          <div class="kicker">Architecture · API Design</div>
+          <h3>REST vs JSON-RPC</h3>
+          <p class="muted">
+            Pieza visual para mostrar criterio técnico: elegir el protocolo correcto según contexto, dominio y restricciones.
+          </p>
+
+          <div class="compare-grid">
+            <div class="compare-panel">
+              <h4 class="blue">REST API</h4>
+              <p class="muted">Orientado a recursos. Ideal para CRUD, APIs públicas y servicios web.</p>
+
+              <div class="flow-box">
+                GET&nbsp;&nbsp;&nbsp;&nbsp;/api/users/123<br />
+                POST&nbsp;&nbsp;&nbsp;/api/products<br />
+                DELETE&nbsp;/api/orders/45
+              </div>
+
+              <div class="tags">
+                <span class="tag">CRUD</span>
+                <span class="tag">Public APIs</span>
+                <span class="tag">Web Services</span>
+              </div>
+            </div>
+
+            <div class="compare-panel">
+              <h4 class="green">JSON-RPC</h4>
+              <p class="muted">Orientado a acciones. Útil para llamadas específicas, WebSockets y microservicios internos.</p>
+
+              <div class="flow-box">
+                {<br />
+                &nbsp;&nbsp;"method": "restartServer",<br />
+                &nbsp;&nbsp;"params": { "id": 10 }<br />
+                }
+              </div>
+
+              <div class="tags">
+                <span class="tag">WebSockets</span>
+                <span class="tag">Microservices</span>
+                <span class="tag">Tooling</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1262,10 +963,7 @@
           <article class="card portfolio-card">
             <div>
               <h3>MAODV-AB</h3>
-              <p>
-                Investigación y simulación en MATLAB para mejorar el enrutamiento multicast
-                mediante reparación anticipada de enlaces.
-              </p>
+              <p>Investigación y simulación en MATLAB para mejorar el enrutamiento multicast mediante reparación anticipada de enlaces.</p>
               <div class="tags">
                 <span class="tag">MATLAB</span>
                 <span class="tag">UAV</span>
@@ -1279,10 +977,7 @@
           <article class="card portfolio-card">
             <div>
               <h3>FakeStoreApp</h3>
-              <p>
-                Aplicación Android orientada a buenas prácticas, consumo de API,
-                arquitectura MVVM y persistencia local.
-              </p>
+              <p>Aplicación Android orientada a buenas prácticas, consumo de API, arquitectura MVVM y persistencia local.</p>
               <div class="tags">
                 <span class="tag">Kotlin</span>
                 <span class="tag">MVVM</span>
@@ -1296,10 +991,7 @@
           <article class="card portfolio-card">
             <div>
               <h3>RockyConta</h3>
-              <p>
-                Sistema web para control de gastos personales y de negocio,
-                tarjetas, préstamos, metas y visualización financiera.
-              </p>
+              <p>Sistema web para control de gastos personales y de negocio, tarjetas, préstamos, metas y visualización financiera.</p>
               <div class="tags">
                 <span class="tag">Web</span>
                 <span class="tag">Dashboard</span>
@@ -1313,113 +1005,93 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         CONTACTO
-         ========================================================= -->
-    <section id="contacto">
-      <div class="container">
-        <div class="contact-card">
-          <div class="kicker">Contacto</div>
-          <h2>¿Construimos algo juntos?</h2>
-
-          <p class="muted">
-            Estoy abierto a oportunidades relacionadas con backend, arquitectura,
-            banca, cloud, automatización y soluciones empresariales.
-          </p>
-
-          <div class="hero-actions" style="justify-content:center;">
-            <a class="btn btn-primary" href="mailto:ivan.hariasaqp@gmail.com">Enviar correo</a>
-            <a class="btn" href="https://github.com/Ivan-Arias" target="_blank" rel="noopener">GitHub</a>
-            <button class="btn" onclick="window.print()">Imprimir / Guardar CV</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer>
     <div class="container">
-      © 2026 Henrry Arias · Portafolio profesional en HTML, CSS y D3.js.
+      © 2026 Henrry Arias · Portafolio profesional
     </div>
   </footer>
 
-  <!-- =========================================================
-       D3.JS VISUALIZACIONES
-       ========================================================= -->
   <script>
-    /* =========================================================
-       1. HERO NETWORK - D3.js
-       ========================================================= */
     const networkNodes = [
       { id: "Henrry", group: "core" },
-      { id: "Java", group: "backend" },
-      { id: "APX", group: "backend" },
-      { id: "Spring", group: "backend" },
-      { id: "Oracle", group: "data" },
-      { id: "AWS", group: "cloud" },
-      { id: "Azure", group: "cloud" },
-      { id: "Angular", group: "frontend" },
-      { id: "Scrum", group: "agile" },
-      { id: "Arquitectura", group: "architecture" }
+      { id: "Backend", group: "backend" },
+      { id: "Arquitectura", group: "architecture" },
+      { id: "Banca", group: "domain" },
+      { id: "Cloud", group: "cloud" },
+      { id: "Calidad", group: "quality" },
+      { id: "APIs", group: "api" },
+      { id: "Datos", group: "data" }
     ];
 
     const networkLinks = [
-      { source: "Henrry", target: "Java" },
-      { source: "Henrry", target: "APX" },
-      { source: "Henrry", target: "Spring" },
-      { source: "Henrry", target: "Oracle" },
-      { source: "Henrry", target: "AWS" },
-      { source: "Henrry", target: "Azure" },
-      { source: "Henrry", target: "Angular" },
-      { source: "Henrry", target: "Scrum" },
+      { source: "Henrry", target: "Backend" },
       { source: "Henrry", target: "Arquitectura" },
-      { source: "Java", target: "Spring" },
-      { source: "Java", target: "APX" },
-      { source: "APX", target: "Oracle" },
-      { source: "Spring", target: "Oracle" },
-      { source: "AWS", target: "Azure" }
+      { source: "Henrry", target: "Banca" },
+      { source: "Henrry", target: "Cloud" },
+      { source: "Henrry", target: "Calidad" },
+      { source: "Backend", target: "APIs" },
+      { source: "Backend", target: "Datos" },
+      { source: "Arquitectura", target: "APIs" },
+      { source: "Banca", target: "Datos" },
+      { source: "Cloud", target: "Calidad" }
     ];
 
-    function renderHeroNetwork() {
-      const svgElement = document.querySelector("#heroNetwork");
-      const width = svgElement.clientWidth || 420;
-      const height = 420;
+    function renderNetwork(selector, nodes, links) {
+      const container = document.querySelector(selector);
+      const width = container.clientWidth || 420;
+      const height = 360;
 
-      d3.select("#heroNetwork").selectAll("*").remove();
+      d3.select(selector).selectAll("*").remove();
 
       const svg = d3
-        .select("#heroNetwork")
+        .select(selector)
         .attr("viewBox", `0 0 ${width} ${height}`)
         .attr("preserveAspectRatio", "xMidYMid meet");
 
       const color = d3.scaleOrdinal()
-        .domain(["core", "backend", "data", "cloud", "frontend", "agile", "architecture"])
-        .range(["#38bdf8", "#6366f1", "#22c55e", "#facc15", "#fb7185", "#a78bfa", "#14b8a6"]);
+        .domain(["core", "backend", "architecture", "domain", "cloud", "quality", "api", "data", "center", "edu", "cert", "skill"])
+        .range(["#38bdf8", "#6366f1", "#14b8a6", "#facc15", "#a855f7", "#fb7185", "#22c55e", "#0ea5e9", "#38bdf8", "#6366f1", "#22c55e", "#facc15"]);
 
-      const simulation = d3.forceSimulation(networkNodes)
-        .force("link", d3.forceLink(networkLinks).id(d => d.id).distance(82))
-        .force("charge", d3.forceManyBody().strength(-280))
-        .force("center", d3.forceCenter(width / 2, height / 2 - 20))
-        .force("collision", d3.forceCollide().radius(42));
+      const simulation = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).distance(88))
+        .force("charge", d3.forceManyBody().strength(-300))
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        .force("collision", d3.forceCollide().radius(44));
 
       const link = svg.append("g")
         .selectAll("line")
-        .data(networkLinks)
+        .data(links)
         .join("line")
-        .attr("stroke", "rgba(148, 163, 184, 0.36)")
+        .attr("stroke", "rgba(148, 163, 184, 0.34)")
         .attr("stroke-width", 1.5);
 
       const node = svg.append("g")
         .selectAll("g")
-        .data(networkNodes)
+        .data(nodes)
         .join("g")
-        .call(drag(simulation));
+        .call(d3.drag()
+          .on("start", function(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+          })
+          .on("drag", function(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+          })
+          .on("end", function(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+          })
+        );
 
       node.append("circle")
-        .attr("r", d => d.id === "Henrry" ? 33 : 24)
+        .attr("r", d => d.id === "Henrry" || d.id === "Educación" ? 36 : 28)
         .attr("fill", d => color(d.group))
-        .attr("opacity", 0.92)
+        .attr("opacity", 0.94)
         .attr("stroke", "rgba(255,255,255,0.55)")
         .attr("stroke-width", 1.2);
 
@@ -1428,8 +1100,8 @@
         .attr("text-anchor", "middle")
         .attr("dy", 4)
         .attr("fill", "white")
-        .attr("font-size", d => d.id === "Henrry" ? 12 : 10)
-        .attr("font-weight", 900);
+        .attr("font-size", 10)
+        .attr("font-weight", 950);
 
       simulation.on("tick", () => {
         link
@@ -1440,146 +1112,17 @@
 
         node.attr("transform", d => `translate(${d.x}, ${d.y})`);
       });
-
-      function drag(simulation) {
-        function dragstarted(event, d) {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        }
-
-        function dragged(event, d) {
-          d.fx = event.x;
-          d.fy = event.y;
-        }
-
-        function dragended(event, d) {
-          if (!event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        }
-
-        return d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended);
-      }
     }
 
-    /* =========================================================
-       2. SKILLS CHART - D3.js
-       ========================================================= */
-    const skills = [
-      { name: "Java 8/11", value: 92 },
-      { name: "APX Online / Batch", value: 90 },
-      { name: "Spring / Maven", value: 86 },
-      { name: "Oracle / SQL Server", value: 84 },
-      { name: "SCRUM", value: 86 },
-      { name: "TDD / JUnit", value: 78 },
-      { name: "Angular / TypeScript", value: 74 },
-      { name: "AWS / Cloud", value: 68 },
-      { name: "JasperReport", value: 70 },
-      { name: "HTML / CSS / JQuery", value: 76 }
-    ];
-
-    function renderSkillsChart() {
-      const container = document.querySelector("#skillsChart");
-      const width = container.clientWidth || 520;
-      const height = 360;
-      const margin = { top: 18, right: 36, bottom: 34, left: 150 };
-
-      container.innerHTML = "";
-
-      const svg = d3.select("#skillsChart")
-        .append("svg")
-        .attr("viewBox", `0 0 ${width} ${height}`)
-        .attr("preserveAspectRatio", "xMidYMid meet");
-
-      const defs = svg.append("defs");
-
-      const gradient = defs.append("linearGradient")
-        .attr("id", "barGradient")
-        .attr("x1", "0%")
-        .attr("x2", "100%")
-        .attr("y1", "0%")
-        .attr("y2", "0%");
-
-      gradient.append("stop").attr("offset", "0%").attr("stop-color", "#38bdf8");
-      gradient.append("stop").attr("offset", "100%").attr("stop-color", "#6366f1");
-
-      const x = d3.scaleLinear()
-        .domain([0, 100])
-        .range([margin.left, width - margin.right]);
-
-      const y = d3.scaleBand()
-        .domain(skills.map(d => d.name))
-        .range([margin.top, height - margin.bottom])
-        .padding(0.28);
-
-      svg.append("g")
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(x).ticks(4).tickFormat(d => d + "%"))
-        .call(g => g.select(".domain").remove())
-        .call(g => g.selectAll("line").attr("stroke", "rgba(148,163,184,0.2)"))
-        .call(g => g.selectAll("text").attr("fill", "#94a3b8"));
-
-      svg.append("g")
-        .attr("transform", `translate(${margin.left},0)`)
-        .call(d3.axisLeft(y))
-        .call(g => g.select(".domain").remove())
-        .call(g => g.selectAll("text").attr("fill", "#cbd5e1").attr("font-weight", 800));
-
-      svg.append("g")
-        .selectAll(".bar-bg")
-        .data(skills)
-        .join("rect")
-        .attr("x", margin.left)
-        .attr("y", d => y(d.name))
-        .attr("width", width - margin.left - margin.right)
-        .attr("height", y.bandwidth())
-        .attr("rx", 10)
-        .attr("fill", "rgba(148,163,184,0.10)");
-
-      svg.append("g")
-        .selectAll(".bar-value")
-        .data(skills)
-        .join("rect")
-        .attr("x", margin.left)
-        .attr("y", d => y(d.name))
-        .attr("height", y.bandwidth())
-        .attr("rx", 10)
-        .attr("fill", "url(#barGradient)")
-        .attr("width", 0)
-        .transition()
-        .duration(900)
-        .delay((d, i) => i * 70)
-        .attr("width", d => x(d.value) - margin.left);
-
-      svg.append("g")
-        .selectAll(".bar-label")
-        .data(skills)
-        .join("text")
-        .attr("x", d => Math.min(x(d.value) + 8, width - 32))
-        .attr("y", d => y(d.name) + y.bandwidth() / 2 + 5)
-        .attr("fill", "#f8fafc")
-        .attr("font-size", 12)
-        .attr("font-weight", 900)
-        .text(d => d.value + "%");
-    }
-
-    /* =========================================================
-       3. EXPERIENCE CHART - D3.js
-       ========================================================= */
     const experience = [
-      { year: 2013, label: "Puridiom", role: "Prácticas" },
-      { year: 2014, label: "Smart Reasons", role: "Junior" },
-      { year: 2015, label: "EBusiness", role: "Analista Programador" },
-      { year: 2016, label: "Consulting & Data", role: "Analista Programador" },
-      { year: 2018, label: "Excellent Medical", role: "Analista Programador" },
-      { year: 2019, label: "BNP / Medicard", role: "Web / Analista" },
-      { year: 2020, label: "ONPE", role: "Analista Programador 3" },
-      { year: 2021, label: "BBVA Perú", role: "Software Development Analyst I" },
-      { year: 2024, label: "Maestría", role: "Ciencias de la Computación" }
+      { year: 2013, label: "Puridiom" },
+      { year: 2014, label: "Smart Reasons" },
+      { year: 2015, label: "EBusiness" },
+      { year: 2016, label: "Consulting & Data" },
+      { year: 2019, label: "BNP / Medicard" },
+      { year: 2020, label: "ONPE" },
+      { year: 2021, label: "BBVA" },
+      { year: 2024, label: "Maestría" }
     ];
 
     function renderExperienceChart() {
@@ -1617,13 +1160,13 @@
         .attr("cx", d => x(d.year))
         .attr("cy", y)
         .attr("r", 0)
-        .attr("fill", d => d.label.includes("BBVA") ? "#38bdf8" : "#6366f1")
+        .attr("fill", d => d.label === "BBVA" ? "#38bdf8" : "#6366f1")
         .attr("stroke", "rgba(255,255,255,0.65)")
         .attr("stroke-width", 1.3)
         .transition()
         .duration(700)
         .delay((d, i) => i * 90)
-        .attr("r", d => d.label.includes("BBVA") ? 12 : 8);
+        .attr("r", d => d.label === "BBVA" ? 13 : 8);
 
       svg.append("g")
         .selectAll("text.year")
@@ -1646,25 +1189,43 @@
         .attr("text-anchor", "middle")
         .attr("fill", "#f8fafc")
         .attr("font-size", 10)
-        .attr("font-weight", 800)
+        .attr("font-weight", 850)
         .text(d => d.label);
-
-      svg.append("g")
-        .attr("transform", `translate(0,${height - margin.bottom + 38})`)
-        .call(d3.axisBottom(x).tickFormat(d3.format("d")).ticks(6))
-        .call(g => g.select(".domain").remove())
-        .call(g => g.selectAll("line").attr("stroke", "rgba(148,163,184,0.18)"))
-        .call(g => g.selectAll("text").attr("fill", "#94a3b8"));
     }
 
-    function renderAllCharts() {
-      renderHeroNetwork();
-      renderSkillsChart();
+    const educationNodes = [
+      { id: "Educación", group: "center" },
+      { id: "UNSA", group: "edu" },
+      { id: "Maestría", group: "edu" },
+      { id: "Ingeniería", group: "edu" },
+      { id: "SAFe", group: "cert" },
+      { id: "AWS", group: "cert" },
+      { id: "Arquitectura", group: "skill" },
+      { id: "Scrum", group: "skill" },
+      { id: "Java", group: "skill" },
+      { id: "APX", group: "skill" }
+    ];
+
+    const educationLinks = [
+      { source: "Educación", target: "UNSA" },
+      { source: "UNSA", target: "Maestría" },
+      { source: "UNSA", target: "Ingeniería" },
+      { source: "Educación", target: "SAFe" },
+      { source: "Educación", target: "AWS" },
+      { source: "Educación", target: "Arquitectura" },
+      { source: "Educación", target: "Scrum" },
+      { source: "Arquitectura", target: "Java" },
+      { source: "Java", target: "APX" }
+    ];
+
+    function renderAll() {
+      renderNetwork("#heroNetwork", networkNodes, networkLinks);
       renderExperienceChart();
+      renderNetwork("#educationChart", educationNodes, educationLinks);
     }
 
-    renderAllCharts();
-    window.addEventListener("resize", renderAllCharts);
+    renderAll();
+    window.addEventListener("resize", renderAll);
   </script>
 
 </body>
